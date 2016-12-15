@@ -22,7 +22,7 @@ for(var i = 0; i < keys.length; i++) {
 		var btnVal = this.getAttribute('data-value');
 
 
-		if(btnVal == 'C') {
+		if(btnVal == 'Clear') {
 			clearScreen();
 		}
 
