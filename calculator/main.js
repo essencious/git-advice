@@ -21,7 +21,6 @@ for(var i = 0; i < keys.length; i++) {
 		var inputVal = getInput();
 		var btnVal = this.getAttribute('data-value');
 
-
 		if(btnVal == 'Clear') {
 			clearScreen();
 		}
