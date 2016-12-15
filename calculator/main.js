@@ -1,16 +1,28 @@
 var keys = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '÷'];
 var decimalAdded = false;
+var input = document.querySelector('.screen');
+
+function getInput() {
+	return input.innerHTML;
+}
+
+function updateScreen(newVal) {
+	input.innerHTML = newVal;
+}
+
+function clearScreen() {
+	input.innerHTML = '';
+	decimalAdded = false;
+}
 
 for(var i = 0; i < keys.length; i++) {
 	keys[i].onclick = function(e) {
-		var input = document.querySelector('.display');
-		var inputVal = input.innerHTML;
+		var inputVal = getInput();
 		var btnVal = this.innerHTML;
 
 		if(btnVal == 'C') {
-			input.innerHTML = '';
-			decimalAdded = false;
+			clearScreen();
 		}
 
 		else if(btnVal == '=') {
@@ -23,7 +35,7 @@ for(var i = 0; i < keys.length; i++) {
 				equation = equation.replace(/.$/, '');
 
 			if(equation)
-				input.innerHTML = eval(equation);
+				updateScreen(eval(equation));
 
 			decimalAdded = false;
 		}
@@ -32,13 +44,13 @@ for(var i = 0; i < keys.length; i++) {
 			var lastChar = inputVal[inputVal.length - 1];
 
 			if(inputVal != '' && operators.indexOf(lastChar) == -1)
-				input.innerHTML += btnVal;
+				updateScreen(inputVal + btnVal);
 
 			else if(inputVal == '' && btnVal == '-')
-				input.innerHTML += btnVal;
+				updateScreen(inputVal + btnVal);
 
 			if(operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
-				input.innerHTML = inputVal.replace(/.$/, btnVal);
+				updateScreen(inputVal.replace(/.$/, btnVal));
 			}
 
 			decimalAdded =false;
@@ -46,13 +58,13 @@ for(var i = 0; i < keys.length; i++) {
 
 		else if(btnVal == '.') {
 			if(!decimalAdded) {
-				input.innerHTML += btnVal;
+				updateScreen(inputVal + btnVal);
 				decimalAdded = true;
 			}
 		}
 
 		else {
-			input.innerHTML += btnVal;
+			updateScreen(inputVal + btnVal);
 		}
 
 		e.preventDefault();
