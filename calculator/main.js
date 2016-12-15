@@ -6,7 +6,7 @@ for(var i = 0; i < keys.length; i++) {
 	keys[i].onclick = function(e) {
 		var input = document.querySelector('.screen');
 		var inputVal = input.innerHTML;
-		var btnVal = this.innerHTML;
+		var btnVal = this.getAttribute('data-value');
 
 		if(btnVal == 'C') {
 			input.innerHTML = '';
