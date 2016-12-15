@@ -16,6 +16,7 @@ function clearScreen() {
 	decimalAdded = false;
 }
 
+// For each button - do things
 for(var i = 0; i < keys.length; i++) {
 	keys[i].onclick = function(e) {
 		var inputVal = getInput();
