@@ -21,7 +21,7 @@ for(var i = 0; i < keys.length; i++) {
 		var inputVal = getInput();
 		var btnVal = this.innerHTML;
 
-		if(btnVal == 'C') {
+		if(btnVal == 'Clear') {
 			clearScreen();
 		}
 
