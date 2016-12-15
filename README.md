@@ -32,6 +32,8 @@ Code reviews helps the team understand the code base, reduce errors and bugs, le
 
 Things to look for:
 
+* Check your own
+* Check where the code is merging into
 * Code style
 * Commented code
 * Obvious errors
