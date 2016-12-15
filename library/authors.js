@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 
     var checkEntered = function () {
         var firstName = $firstName.val().trim();
