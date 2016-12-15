@@ -1,7 +1,7 @@
 var keys = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '÷'];
 var decimalAdded = false;
-var input = document.querySelector('.screen');
+var input = document.querySelector('.display');
 
 function getInput() {
 	return input.innerHTML;
