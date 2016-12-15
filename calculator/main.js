@@ -2,6 +2,7 @@ var keys = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '÷'];
 var decimalAdded = false;
 
+// For each button - do things
 for(var i = 0; i < keys.length; i++) {
 	keys[i].onclick = function(e) {
 		var input = document.querySelector('.screen');
